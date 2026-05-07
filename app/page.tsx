@@ -4,6 +4,7 @@ import HowWorks from "@/components/home/HowWork";
 import ProfessionalTalk from "@/components/home/ProfessionalTalk";
 import Employers from "@/components/home/Employers";
 import Image from "next/image";
+import Services from "@/components/home/Services";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HowWorks/>
       <ProfessionalTalk/>
       <Employers/>
+      <Services/>
     </div>
   );
 }

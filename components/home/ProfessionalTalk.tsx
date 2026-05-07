@@ -1,10 +1,12 @@
 "use client";
+
+import { motion } from "framer-motion";
 import { FaScissors } from "react-icons/fa6";
 
 
 const professions = [
   {
-    name: "BARBER ",
+    name: "BARBER",
     icon: <FaScissors />,
 
     professionalItems: [
@@ -13,8 +15,9 @@ const professions = [
       '"Get Hired Faster"',
     ],
   },
+
   {
-    name: "BARBERSHOP ",
+    name: "BARBERSHOP",
     icon: <FaScissors />,
 
     professionalItems: [
@@ -23,40 +26,44 @@ const professions = [
       '"Hire with Confidence"',
     ],
   },
+
   {
-    name: "BARBERSCHOOL ",
-    icon: <FaScissors />
-,
+    name: "BARBERSCHOOL",
+    icon: <FaScissors />,
+
     professionalItems: [
       '"Create School Profile"',
       '"Share Student Work"',
       '"Connect with Talent"',
     ],
   },
+
   {
     name: "EVENT_ORGANIZER",
-    icon: <FaScissors />
-,
+    icon: <FaScissors />,
+
     professionalItems: [
       '"Post Your Event Need"',
       '"Browse Verified Talent"',
       '"Book with Proof"',
     ],
   },
+
   {
-    name: "BUSINESS_RESOURCE ",
-    icon: <FaScissors />
-,
+    name: "BUSINESS_RESOURCE",
+    icon: <FaScissors />,
+
     professionalItems: [
       '"List Your Resource"',
       '"Reach the Right Shops"',
       '"Grow Your Network"',
     ],
   },
+
   {
     name: "PRODUCT_ADVERTISER",
-    icon: <FaScissors />
-,
+    icon: <FaScissors />,
+
     professionalItems: [
       '"Create Your Listing"',
       '"Target Barbers Directly"',
@@ -65,68 +72,228 @@ const professions = [
   },
 ];
 
-function ProfessionCol({ prof }: { prof: typeof professions[0] }) {
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+
+  show: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+
+function ProfessionCol({
+  prof,
+  index,
+}: {
+  prof: typeof professions[0];
+  index: number;
+}) {
   return (
-    <div className="flex flex-col bg-black p-5 rounded-2xl border-[1px] border-[#666457]">
-      {/* Column Header */}
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
+      transition={{
+        duration: 0.8,
+        delay: index * 0.12,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      whileHover={{
+        y: -10,
+      }}
+      className="flex flex-col bg-black p-5 rounded-2xl border-[1px] border-[#666457] hover:border-amber-400/40 transition-all duration-300"
+    >
+      
+      
+      
       <div className="flex items-center gap-2.5 mb-3.5">
-        <div className="w-8.5 h-8.5 rounded-[9px] bg-[rgba(245,166,35,0.13)] border border-[rgba(245,166,35,0.28)] flex items-center justify-center flex-shrink-0 text-amber-400">
+        
+        {/* ICON */}
+        <motion.div
+          whileHover={{
+            rotate: 10,
+            scale: 1.08,
+          }}
+          className="w-8.5 h-8.5 rounded-[9px] bg-[rgba(245,166,35,0.13)] border border-[rgba(245,166,35,0.28)] flex items-center justify-center flex-shrink-0 text-amber-400"
+        >
           {prof.icon}
-        </div>
-        <span className=" text-[16px] font-bold text-white">{prof.name}</span>
+        </motion.div>
+
+        
+        {/* TITLE */}
+        <motion.span
+          initial={{
+            opacity: 0,
+            x: -20,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            delay: 0.2,
+            duration: 0.5,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="text-[16px] font-bold text-white"
+        >
+          {prof.name}
+        </motion.span>
       </div>
 
-      {/* Resume Card */}
-      <div className="bg-[#ffff] rounded-xl px-[18px] py-4 mb-2.5">
+      
+ 
+      <motion.div
+        whileHover={{
+          scale: 1.02,
+        }}
+        className="bg-[#ffff] rounded-xl px-[18px] py-4 mb-2.5"
+      >
+        
+        
+        {/* TOP LABEL */}
         <div className="flex items-center gap-1.5 mb-3">
-          {/* <ResumeIcon /> */}
-          <span className="text-[10px] font-bold tracking-widest uppercase text-[#999]">Resume Says</span>
+          <span className="text-[10px] font-bold tracking-widest uppercase text-[#999]">
+            Professional Says
+          </span>
         </div>
+
+        
+        {/* ITEMS */}
         <div className="flex flex-col gap-[7px]">
           {prof.professionalItems.map((item, i) => (
-            <div key={i} className="flex items-start gap-2">
-              <span className="text-[#bbb] text-[13px] mt-[1px] flex-shrink-0">—</span>
-              <span className="text-[12.5px] text-[#555] italic leading-snug">{item}</span>
-            </div>
+            <motion.div
+              key={i}
+              initial={{
+                opacity: 0,
+                x: -15,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              transition={{
+                delay: i * 0.08,
+                duration: 0.4,
+              }}
+              viewport={{
+                once: true,
+              }}
+              className="flex items-start gap-2"
+            >
+              <span className="text-[#bbb] text-[13px] mt-[1px] flex-shrink-0">
+                —
+              </span>
+
+              <span className="text-[12.5px] text-[#555] italic leading-snug">
+                {item}
+              </span>
+            </motion.div>
           ))}
         </div>
-      </div>
-     
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
+
 export default function ProfessionalTalk() {
   return (
-    <section     className=" grid-bg min-h-screen bg-background flex items-center justify-center px-6 py-20">
-      <div className="max-w-275 w-full flex flex-col items-center text-center">
+    <section className="grid-bg min-h-screen bg-background flex items-center justify-center px-6 py-20 overflow-hidden">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{
+          once: true,
+          amount: 0.15,
+        }}
+        transition={{
+          staggerChildren: 0.15,
+        }}
+        className="max-w-275 w-full flex flex-col items-center text-center"
+      >
+        
+        
+        <motion.div
+          variants={fadeUp}
+          transition={{
+            duration: 0.7,
+          }}
+          className="inline-flex items-center gap-2 border border-[#333] rounded-full px-5 py-1.5 text-[11px] font-bold uppercase text-foreground mb-7 bg-white/5"
+        >
+          <motion.div
+            animate={{
+              scale: [1, 1.4, 1],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+            }}
+            className="w-2 h-2 rounded-full bg-[#e8a020] shrink-0"
+          />
 
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 border border-[#333] rounded-full px-5 py-1.5 text-[11px] font-bold uppercase text-foreground mb-7 bg-white/5">
-                  <div className="w-2 h-2 rounded-full bg-[#e8a020] shrink-0" />
+          SEE THE DIFFERENCE
+        </motion.div>
 
         
-          SEE THE DIFFERENCE
-        </div>
+        
+        <motion.h2
+          variants={fadeUp}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="text-[clamp(32px,5vw,58px)] font-extrabold leading-[1.1] text-foreground mb-3.5"
+        >
+          Professional talks.{" "}
 
-        {/* Heading */}
-        <h2 className="text-[clamp(32px,5vw,58px)] font-extrabold leading-[1.1] text-foreground mb-3.5">
-          Professional talks. <span className="text-amber-400">Vetano shows.</span>
-        </h2>
-        <p className="text-[15px] text-foreground mb-12 max-w-[480px] leading-relaxed">
-          Words on paper versus proof on video — the choice is clear.
-        </p>
+          <span className="text-amber-400">
+            BarberzLink shows.
+          </span>
+        </motion.h2>
 
-        {/* 3 Columns */}
-        <div className="grid grid-cols-3 gap-5 w-full max-[700px]:grid-cols-1">
-          {professions.map((prof, i) => (
-            <ProfessionCol key={i} prof={prof} />
-          ))}
-        </div>
+        
+      
+        <motion.p
+          variants={fadeUp}
+          transition={{
+            duration: 0.8,
+            delay: 0.1,
+          }}
+          className="text-[15px] text-foreground mb-12 max-w-[480px] leading-relaxed"
+        >
+          Words on paper versus proof on video —
+          the choice is clear.
+        </motion.p>
 
        
-
-      </div>
+        <motion.div
+          variants={fadeUp}
+          transition={{
+            duration: 0.8,
+          }}
+          className="grid grid-cols-3 gap-5 w-full max-[700px]:grid-cols-1"
+        >
+          {professions.map((prof, i) => (
+            <ProfessionCol
+              key={i}
+              prof={prof}
+              index={i}
+            />
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
