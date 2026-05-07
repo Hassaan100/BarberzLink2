@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -13,49 +14,59 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "DivineeSoft Technology - Your Digital Growth Partner",
-  description: "DivineeSoft Technology helps businesses grow online through innovative digital marketing strategies, cutting-edge web development, SEO optimization, and creative branding solutions. Partner with us to boost your online presence and drive measurable results.",
+  title: "Barberzlink - Hire Connect Grow",
+  description:
+    "Barberzlink is the ultimate platform for barbers, salons, and clients to hire, connect, and grow. Discover talented professionals, expand your network, and grow your business with ease. Because apparently the haircut industry also needed digital transformation.",
+
   keywords: [
-    "digital agency",
-    "SEO services",
-    "web development",
-    "digital marketing",
-    "branding",
-    "online growth"
+    "Barberzlink",
+    "barber platform",
+    "salon hiring",
+    "barber jobs",
+    "beauty professionals",
+    "salon network",
+    "hire barbers",
+    "connect salons",
+    "grow business",
   ],
+
   openGraph: {
-    title: "DivineeSoft Technology - Your Digital Growth Partner",
-    description: "DivineeSoft Technology helps businesses grow online through innovative digital marketing strategies, web development, SEO, and branding solutions. Boost your online presence today.",
-    url: "https://www.divineesofttechnology.com",
-    siteName: "DivineeSoft Technology",
+    title: "Barberzlink - Hire Connect Grow",
+    description:
+      "Hire top barber professionals, connect with salons, and grow your business with Barberzlink.",
+    url: "https://barberzlink.com/",
+    siteName: "Barberzlink",
     images: [
       {
-        url: "https://www.divineesofttechnology.com/og-image.jpg",
+        url: "https://barberzlink.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "DivineeSoft Technology",
+        alt: "Barberzlink - Hire Connect Grow",
       },
     ],
     locale: "en_US",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "DivineeSoft Technology - Your Digital Growth Partner",
-    description: "Grow your business online with DivineeSoft Technology's digital marketing, web development, SEO, and branding solutions.",
-    images: ["https://www.divineesofttechnology.com/og-image.jpg"],
-    site: "@divineesofttech",
-    creator: "@divineesofttech",
+    title: "Barberzlink - Hire Connect Grow",
+    description:
+      "Join Barberzlink to hire, connect, and grow in the barber and salon industry.",
+    images: ["https://barberzlink.com/og-image.jpg"],
+    site: "@barberzlink",
+    creator: "@barberzlink",
   },
 };
-
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} font-sans antialiased flex flex-col min-h-screen w-screen overflow-x-hidden`}>
+      <body
+        className={`${montserrat.variable} font-sans antialiased flex flex-col min-h-screen w-screen overflow-x-hidden`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -63,15 +74,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ScrollToTop />
+
           <Header />
 
-          {/* Header Spacer (Conditional) */}
-          {/* <HeaderSpacer /> */}
-
-          {/* Main Content */}
-          <main className="grow">
-            {children}
-          </main>
+          <main className="grow">{children}</main>
 
           <Footer />
         </ThemeProvider>
