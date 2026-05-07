@@ -43,9 +43,9 @@ export default function Header() {
           
 <img
               src="/logo.png"
-              width={30}
-              height={30}
-              className="w-20 cursor-pointer"
+              width={100}
+              height={100}
+              className="w-16 cursor-pointer"
               alt="barberzlink logo"
             />
           {/* Right: theme toggle + socials + store badges */}
