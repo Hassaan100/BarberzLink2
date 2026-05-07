@@ -21,7 +21,7 @@ export default function Header() {
       <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
 
       {/* ── Top bar ─────────────────────────────────────────────────── */}
-      <header className="w-full bg-black border-b border-white/10 px-2 py-3 sticky top-0 z-30">
+      <header className="w-full bg-black border-b border-white/10 px-2 py-2 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
 
           {/* Left: hamburger + logo */}
@@ -33,20 +33,21 @@ export default function Header() {
             >
               <FiMenu size={24} />
             </button>
-            <img
-              src="/logo.png"
-              width={80}
-              height={80}
-              className="w-20 cursor-pointer"
-              alt="barberzlink logo"
-            />
+            <nav className="hidden md:flex items-center gap-6">
+            <NavLinks />
+          </nav>
+            
           </div>
 
           {/* Centre: desktop nav (hidden on mobile) */}
-          <nav className="hidden md:flex items-center gap-6">
-            <NavLinks />
-          </nav>
-
+          
+<img
+              src="/logo.png"
+              width={30}
+              height={30}
+              className="w-20 cursor-pointer"
+              alt="barberzlink logo"
+            />
           {/* Right: theme toggle + socials + store badges */}
           <div className="flex items-center gap-3">
             {/* Theme toggle – uses next-themes + shadcn DropdownMenu */}

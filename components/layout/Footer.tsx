@@ -41,7 +41,7 @@ const legalLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white/80 px-4 sm:px-8  pt-12 lg:pt-16 pb-8 w-full border-t border-[#ffffff4f]">
+    <footer className="bg-black text-white/80 px-4 sm:px-8  pt-12 lg:pt-16 pb-8 w-full border-t border-[#ffffff4f] overflow-hidden!">
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10 lg:mb-14 lg:w-7xl m-auto ">
         <div className="col-span-2 sm:col-span-2 lg:col-span-1">
           <img src="https://barberzlink.netlify.app/assets/logo-UdJIIqTR.png" alt="Barberz Link" width={80} className="mb-4" />
@@ -66,7 +66,7 @@ const Footer = () => {
             ))}
           </div>
 
-          <div className="inline-flex items-center gap-2 bg-white/5 border border-[#99a1af]/20 rounded-lg px-3 py-1.5">
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-[#99a1af]/20 rounded-lg px-3 py-1.5 overflow-hidden!">
             <GiUsaFlag className="text-amber-400 text-sm" />
             <span className="text-xs text-white/80">
               Available{" "}
@@ -133,19 +133,19 @@ const Footer = () => {
 
       <div className="border-t border-[#99a1af]/20 mb-7" />
 
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 w-7xl m-auto">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 w-7xl m-auto ">
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-1.5 text-xs text-white/80">
             <MdLocationOn className="text-amber-400 text-sm shrink-0" />
             716 New Berlin Rd, Ste 15, Jacksonville, FL 32218
           </div>
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-5">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 overflow-hidden">
             <a
               href="mailto:support@barberzlink.com"
               className="flex items-center gap-1.5 text-xs text-white/80 hover:text-amber-400 transition-colors"
             >
               <MdEmail className="text-amber-400 text-sm shrink-0" />
-              support@barberzlink.com
+              contact@barberzlink.com
             </a>
             <a
               href="tel:9043193632"
@@ -157,7 +157,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="text-left sm:text-right">
+        <div className="text-left sm:text-right overflow-hidden">
           <p className="text-xs text-[#99a1af]/60">
             © Barberz Link LLC. All rights reserved.
           </p>

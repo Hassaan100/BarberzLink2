@@ -29,9 +29,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
       >
         {/* Header row */}
         <div className="flex items-center justify-between">
-          <span className="text-white font-black text-xl tracking-widest">
-            <span className="text-yellow-400">V</span>ETANO
-          </span>
+          <img src="/logo.png" alt="" className="w-20" />
           <button
             onClick={onClose}
             className="text-white hover:text-yellow-400 transition-colors"
