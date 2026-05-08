@@ -172,7 +172,7 @@ export default function Employers() {
           amount: 0.2,
         }}
         variants={stagger}
-        className="relative z-10 max-w-[1060px] mx-auto text-center"
+        className="relative z-10 max-w-7xl mx-auto text-center"
       >
         {/* ==========================================
             BADGE
@@ -209,7 +209,7 @@ export default function Employers() {
           className="font-black leading-none mb-5 text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
         >
           Build the team{" "}
-          <span className="text-amber-400">you've always wanted.</span>
+          <span className="text-amber-400">you&apos;ve always wanted.</span>
         </motion.h1>
 
         {/* ==========================================
@@ -223,7 +223,7 @@ export default function Employers() {
           }}
           className="max-w-sm sm:max-w-lg md:max-w-xl mx-auto mb-12 sm:mb-16 leading-relaxed text-foreground/60 text-sm sm:text-base"
         >
-          You've been burned before. BarberzLink lets you see real skills before
+          You&apos;ve been burned before. BarberzLink lets you see real skills before
           you commit—so you stop hoping and start knowing.
         </motion.p>
 

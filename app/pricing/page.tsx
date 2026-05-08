@@ -51,7 +51,7 @@ function formatCycle(cycle: string) {
 
 function SkeletonCard() {
   return (
-    <article className="flex min-h-[540px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8">
+    <article className="flex min-h-115 flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8">
       <div className="flex items-start justify-between gap-4">
         <div>
           <div className="h-3 w-20 animate-pulse rounded bg-zinc-800" />
@@ -155,7 +155,7 @@ export default function PricingPage() {
                   return (
                     <article
                       key={plan._id}
-                      className="flex min-h-[540px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-white transition-colors hover:border-amber-400/60 sm:p-8"
+                      className="flex min-h-115 flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-white transition-colors hover:border-amber-400/60 sm:p-8"
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div>
