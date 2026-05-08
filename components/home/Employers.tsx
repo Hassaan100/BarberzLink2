@@ -54,7 +54,7 @@ const stagger = {
   },
 };
 
-function StepCard({ step }) {
+function StepCard({ step }: { step: typeof steps[number] }) {
   const [hovered, setHovered] = useState(false);
 
   return (

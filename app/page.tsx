@@ -4,9 +4,9 @@ import HowWorks from "@/components/home/HowWork";
 import ProfessionalTalk from "@/components/home/ProfessionalTalk";
 import Employers from "@/components/home/Employers";
 import Services from "@/components/home/Services";
-import PricingPreview from "@/components/home/PricingPreview";
+import PricingPreview from "@/components/home/Pricing";
 import FaqPreview from "@/components/home/FaqPreview";
-import ContactSection from "@/components/home/ContactSection";
+import ContactCTA from "@/components/home/ContactCTA";
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
       <Services/>
       <PricingPreview/>
       <FaqPreview/>
-      <ContactSection/>
+      <ContactCTA/>
     </div>
   );
 }

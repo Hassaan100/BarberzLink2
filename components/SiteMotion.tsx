@@ -44,7 +44,7 @@ export default function SiteMotion({ children }: { children: React.ReactNode }) 
     });
 
     revealElements.forEach((element, index) => {
-      element.style.opacity = "0";
+      element.style.opacity = "5";
       element.style.transform = "translateY(22px) scale(0.985)";
       element.style.willChange = "opacity, transform";
 

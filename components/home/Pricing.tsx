@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaCalendarCheck, FaRegCircleCheck, FaScissors } from "react-icons/fa6";
-import { MdBusinessCenter, MdOutlineSchool, MdStorefront } from "react-icons/md";
-import { RiAdvertisementLine, RiBankCardLine } from "react-icons/ri";
+import { FaArrowRight, FaRegCircleCheck, FaScissors } from "react-icons/fa6";
+import { MdStorefront } from "react-icons/md";
+import { RiBankCardLine } from "react-icons/ri";
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "https://barberlinkbackend-production.up.railway.app";
 
@@ -12,7 +12,7 @@ type Plan = {
   _id: string;
   name: string;
   price: number;
-  role: "barber" | "barbershop" | "business_resource" | "event_organizer" | "barberschool" | "product_advertiser";
+  role: "barber" | "barbershop" | "business_resource";
   cycle: string;
   description: string;
   features: string[];
@@ -29,10 +29,7 @@ const roleIcons = {
   barber: FaScissors,
   barbershop: MdStorefront,
   business_resource: RiBankCardLine,
-  event_organizer: FaCalendarCheck,
-  barberschool: MdOutlineSchool,
-  product_advertiser: RiAdvertisementLine,
-} satisfies Record<Plan["role"], React.ComponentType<{ className?: string }>>;
+};
 
 function formatPrice(price: number) {
   return new Intl.NumberFormat("en-US", {
@@ -45,13 +42,9 @@ function cleanFeature(feature: string) {
   return feature.replace(/^string/, "");
 }
 
-function formatCycle(cycle: string) {
-  return cycle === "one-time" ? "one-time" : cycle;
-}
-
 function SkeletonCard() {
   return (
-    <article className="flex min-h-[540px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8">
+    <article className="flex min-h-[460px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-7">
       <div className="flex items-start justify-between gap-4">
         <div>
           <div className="h-3 w-20 animate-pulse rounded bg-zinc-800" />
@@ -70,25 +63,21 @@ function SkeletonCard() {
         <div className="mt-2 h-4 w-3/4 animate-pulse rounded bg-zinc-800" />
       </div>
 
-      <div className="my-7 h-px bg-zinc-800" />
+      <div className="my-6 h-px bg-zinc-800" />
 
-      <div className="space-y-4">
-        {[1, 2, 3, 4, 5].map((i) => (
+      <div className="space-y-3">
+        {[1, 2, 3, 4].map((i) => (
           <div key={i} className="flex gap-3">
             <div className="h-5 w-5 shrink-0 animate-pulse rounded-full bg-zinc-800" />
             <div className="h-4 flex-1 animate-pulse rounded bg-zinc-800" />
           </div>
         ))}
       </div>
-
-      <div className="mt-auto">
-        <div className="h-11 w-32 animate-pulse rounded-lg bg-zinc-800" />
-      </div>
     </article>
   );
 }
 
-export default function PricingPage() {
+export default function PricingPreview() {
   const [plans, setPlans] = useState<Plan[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -106,7 +95,7 @@ export default function PricingPage() {
         const data: PlansResponse = await response.json();
 
         if (data.success && data.data) {
-          setPlans(data.data.filter((plan) => plan.isActive));
+          setPlans(data.data.filter((plan) => plan.isActive).slice(0, 3));
         }
       } catch (err) {
         console.error("Error fetching plans:", err);
@@ -120,22 +109,22 @@ export default function PricingPage() {
   }, []);
 
   return (
-    <section className="bg-background px-5 py-16 text-foreground sm:py-20">
+    <section
+      id="pricing"
+      className="scroll-mt-20 bg-background px-5 py-20 text-foreground"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-amber-400/20 bg-amber-400/10 text-3xl text-amber-400">
-            <MdBusinessCenter />
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#333] bg-white/3 px-5 py-1.5 text-[11px] font-bold uppercase text-foreground">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-[#e8a020]" />
+            Pricing
           </div>
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-amber-400">
-            BarberzLink Pricing
-          </p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
-            <span className="text-amber-400">Choose the plan</span> that fits
-            your next move
-          </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Pro access for barbers, shops, schools, event organizers, product
-            advertisers, and business resources across the platform.
+          <h2 className="text-4xl font-bold leading-tight md:text-6xl">
+           <span className="text-amber-400"> Pro packages  </span>built for barber industry growth
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Start with the plan that matches your role, then unlock the full
+            package list when you are ready to compare every option.
           </p>
         </div>
 
@@ -144,9 +133,9 @@ export default function PricingPage() {
             <p>{error}</p>
           </div>
         ) : (
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-14 grid gap-6 lg:grid-cols-3">
             {loading
-              ? Array.from({ length: 6 }).map((_, i) => (
+              ? Array.from({ length: 3 }).map((_, i) => (
                   <SkeletonCard key={i} />
                 ))
               : plans.map((plan) => {
@@ -155,60 +144,63 @@ export default function PricingPage() {
                   return (
                     <article
                       key={plan._id}
-                      className="flex min-h-[540px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-white transition-colors hover:border-amber-400/60 sm:p-8"
+                      className="flex min-h-[460px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-white transition-colors hover:border-amber-400/60 sm:p-7"
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div>
                           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
                             {plan.role.replaceAll("_", " ")}
                           </p>
-                          <h2 className="mt-3 text-2xl font-bold leading-snug">
+                          <h3 className="mt-3 text-2xl font-bold leading-snug">
                             {plan.name}
-                          </h2>
+                          </h3>
                         </div>
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-400/10 text-2xl text-amber-400">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-yellow-500/10 text-2xl text-amber-400">
                           <Icon />
                         </div>
                       </div>
 
                       <div className="mt-7 flex items-end gap-2">
-                        <span className="text-5xl font-bold tracking-tight text-amber-400 sm:text-6xl">
+                        <span className="text-5xl font-bold tracking-tight text-amber-400">
                           ${formatPrice(plan.price)}
                         </span>
                         <span className="pb-2 text-base font-semibold text-gray-400">
-                          / {formatCycle(plan.cycle)}
+                          / {plan.cycle}
                         </span>
                       </div>
 
-                      <p className="mt-6 min-h-14 text-base leading-relaxed text-gray-400">
+                      <p className="mt-5 min-h-16 text-sm leading-relaxed text-gray-400 sm:text-base">
                         {plan.description}
                       </p>
 
-                      <div className="my-7 h-px bg-zinc-800" />
+                      <div className="my-6 h-px bg-zinc-800" />
 
-                      <ul className="space-y-4">
-                        {plan.features.map((feature) => (
+                      <ul className="space-y-3">
+                        {plan.features.slice(0, 4).map((feature) => (
                           <li
                             key={feature}
-                            className="flex gap-3 text-sm leading-relaxed text-gray-200 sm:text-base"
+                            className="flex gap-3 text-sm leading-relaxed text-gray-200"
                           >
                             <FaRegCircleCheck className="mt-0.5 shrink-0 text-amber-400" />
                             <span>{cleanFeature(feature)}</span>
                           </li>
                         ))}
                       </ul>
-
-                      <Link
-                        href="/support"
-                        className="mt-auto inline-flex min-h-11 items-center justify-center rounded-lg border border-amber-400/40 bg-amber-400/10 px-5 text-sm font-bold text-amber-300 transition-colors hover:border-amber-400 hover:bg-amber-400 hover:text-black"
-                      >
-                        Get Started
-                      </Link>
                     </article>
                   );
                 })}
           </div>
         )}
+
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/pricing"
+            className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-amber-400 px-7 text-sm font-bold text-black transition-colors "
+          >
+            View All Packages
+            <FaArrowRight />
+          </Link>
+        </div>
       </div>
     </section>
   );
