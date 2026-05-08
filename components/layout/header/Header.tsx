@@ -8,13 +8,11 @@ import { NavLinks } from "./NavLinks";
 import { SocialLinks } from "./SocialLinks";
 import { StoreBadges } from "./StoreBadges";
 import ThemeToggle from "@/components/ThemeToggle";
+import Link from "next/link";
 import Image from "next/image";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const isMobile = useIsMobile();
-  console.log("Is mobile:", isMobile);
   return (
     <>
       {/* ── Mobile slide-out drawer ─────────────────────────────────── */}
@@ -41,13 +39,17 @@ export default function Header() {
 
           {/* Centre: desktop nav (hidden on mobile) */}
           
-<img
-              src="/logo.png"
-              width={100}
-              height={100}
-              className="w-16 cursor-pointer"
-              alt="barberzlink logo"
-            />
+
+<Link href="/" aria-label="Go to homepage - BarberzLink">
+  <Image
+    src="/logo.png"
+    width={206}
+    height={230}
+    alt="BarberzLink logo"
+    className="w-16 cursor-pointer"
+    priority
+  />
+</Link>
           {/* Right: theme toggle + socials + store badges */}
           <div className="flex items-center gap-3">
             {/* Theme toggle – uses next-themes + shadcn DropdownMenu */}

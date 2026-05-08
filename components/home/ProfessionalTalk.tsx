@@ -210,7 +210,7 @@ function ProfessionCol({
 
 export default function ProfessionalTalk() {
   return (
-    <section className="grid-bg min-h-screen bg-background flex items-center justify-center px-6 py-20 overflow-hidden">
+    <section id="professional-talk" className="grid-bg min-h-screen scroll-mt-20 bg-background flex items-center justify-center px-6 py-20 overflow-hidden">
       <motion.div
         initial="hidden"
         whileInView="show"

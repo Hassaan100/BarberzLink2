@@ -107,12 +107,12 @@ function StepCard({ step, index }) {
       whileHover={{
         y: -10,
       }}
-      className="bg-background border border-[#222] rounded-2xl flex flex-col transition-all duration-300 p-3 z-5"
+      className="bg-background border border-[#222] rounded-2xl flex flex-col transition-all duration-300 p-3 z-5 "
     >
       
       
           {/* IMAGE */}
-      <div className="relative overflow-hidden rounded-2xl">
+      <div className="relative  rounded-2xl">
         
         <motion.img
           whileHover={{
@@ -230,7 +230,7 @@ export default function HowWorks() {
       : barberShopSteps;
 
   return (
-    <section className="min-h-screen bg-background flex items-center justify-center px-5 py-16 overflow-hidden">
+    <section id="how-it-works" className="min-h-screen scroll-mt-20 bg-background flex items-center justify-center px-5 py-16 overflow-hidden">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -351,7 +351,7 @@ export default function HowWorks() {
             transition={{
               duration: 0.5,
             }}
-            className="grid grid-cols-4 gap-4 w-full max-[800px]:grid-cols-2 max-[480px]:grid-cols-1"
+            className="grid grid-cols-4 gap-4 w-full max-[800px]:grid-cols-2 max-[480px]:grid-cols-1 "
           >
             {steps.map((step, i) => (
               <StepCard

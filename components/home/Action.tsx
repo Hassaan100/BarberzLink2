@@ -17,7 +17,7 @@ export default function Action() {
   };
 
   return (
-    <section className="min-h-screen bg-background flex items-center justify-center px-6 overflow-hidden">
+    <section id="see-it-in-action" className="min-h-screen scroll-mt-20 bg-background flex items-center justify-center px-6 overflow-hidden">
       <motion.div
         initial="hidden"
         whileInView="show"

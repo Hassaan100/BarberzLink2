@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 
 import { SiAppstore, SiGoogleplay } from "react-icons/si";
 import { FiPlay, FiShield, FiVideo, FiAward } from "react-icons/fi";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen bg-[linear-gradient(to_right,var(--hero-bg-from),var(--hero-bg-via),var(--hero-bg-to))] flex items-center px-8 md:px-16 py-16 overflow-hidden">
+    <section id="home" className="min-h-screen scroll-mt-20 bg-[linear-gradient(to_right,var(--hero-bg-from),var(--hero-bg-via),var(--hero-bg-to))] flex items-center px-8 md:px-16 py-16 overflow-hidden">
       <div className="max-w-screen-xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-12">
         
         
@@ -43,7 +44,7 @@ export default function HeroSection() {
             className="text-5xl md:text-[53px] font-black leading-tight mb-6"
           >
             <span className="text-foreground">
-              Resumes say it.
+              Professional say it.
             </span>
 
             <br />
@@ -80,54 +81,64 @@ export default function HeroSection() {
 
           
           {/* APP BUTTONS */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex items-center gap-3 mb-4"
-          >
-            
-            {/* APP STORE */}
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="#"
-              className="flex items-center gap-2 bg-background text-foreground rounded-xl px-4 py-2.5 hover:bg-background transition-colors"
-            >
-              <SiAppstore size={22} />
+         <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6, duration: 0.6 }}
+  className="flex items-center gap-3 mb-4"
+>
+  
+  {/* APP STORE */}
+  <Link
+    href="https://www.apple.com/app-store/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="flex cursor-pointer items-center gap-2 rounded-xl bg-background px-4 py-2.5 text-foreground transition-colors hover:bg-background"
+    >
+      <SiAppstore size={22} />
 
-              <div className="leading-tight">
-                <p className="text-[9px] opacity-60">
-                  Download on the
-                </p>
+      <div className="leading-tight">
+        <p className="text-[9px] opacity-60">
+          Download on the
+        </p>
 
-                <p className="text-[13px] font-bold">
-                  App Store
-                </p>
-              </div>
-            </motion.a>
+        <p className="text-[13px] font-bold">
+          App Store
+        </p>
+      </div>
+    </motion.div>
+  </Link>
 
-            
-            {/* GOOGLE PLAY */}
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="#"
-              className="flex items-center gap-2 bg-background text-foreground rounded-xl px-4 py-2.5 hover:bg-background transition-colors"
-            >
-              <SiGoogleplay size={20} />
+  
+  {/* GOOGLE PLAY */}
+  <Link
+    href="https://play.google.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="flex cursor-pointer items-center gap-2 rounded-xl bg-background px-4 py-2.5 text-foreground transition-colors hover:bg-background"
+    >
+      <SiGoogleplay size={20} />
 
-              <div className="leading-tight">
-                <p className="text-[9px] opacity-60">
-                  GET IT ON
-                </p>
+      <div className="leading-tight">
+        <p className="text-[9px] opacity-60">
+          GET IT ON
+        </p>
 
-                <p className="text-[13px] font-bold">
-                  Google Play
-                </p>
-              </div>
-            </motion.a>
-          </motion.div>
+        <p className="text-[13px] font-bold">
+          Google Play
+        </p>
+      </div>
+    </motion.div>
+  </Link>
+</motion.div>
 
           
           {/* SMALL TEXT */}
@@ -162,14 +173,14 @@ export default function HeroSection() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.95 }}
             href="#"
-            className="inline-flex items-center gap-2 border border-yellow-500/50 text-foreground rounded-full px-5 py-2.5 hover:border-yellow-400 transition-colors mb-10"
+            className=" bg-[#161410] inline-flex items-center gap-2 border border-yellow-500/50 text-foreground rounded-full px-5 py-2.5 hover:border-yellow-400 transition-colors mb-10 "
           >
             <FiPlay
               size={16}
               className="text-yellow-500"
             />
 
-            <span className="text-sm font-medium">
+            <span className="text-sm font-medium text-amber-400">
               Watch the 56-second tour
             </span>
           </motion.a>
@@ -240,11 +251,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
-            className="absolute top-0 right-4 flex items-center gap-2 bg-label border border-span rounded-full px-3 py-1.5 z-10"
+            className="absolute top-[-3] bg-black right-25 flex items-center gap-2 bg-label border border-span rounded-full px-3 py-1.5 z-10"
           >
-            <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse " />
 
-            <span className="text-yellow-500 text-xs font-semibold tracking-widest uppercase">
+            <span className="text-yellow-500 text-xs font-semibold tracking-widest uppercase shadown-lg shadow-amber-400">
               App Preview
             </span>
           </motion.div>
@@ -259,11 +270,18 @@ export default function HeroSection() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="relative w-70 h-145 bg-[#111] rounded-[45px] border-4 border-[#333] shadow-2xl overflow-hidden"
+            className="relative h-[640px] w-[310px] rounded-[58px] border-[10px] border-[#2f3033] bg-[#0b0b0d] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:h-[700px] sm:w-[340px]"
+            aria-label="iPhone 14 Pro Max app preview"
           >
-            
-            <div className="w-full h-full bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f] p-5 flex flex-col">
-              
+            <div className="absolute -left-[15px] top-28 h-16 w-1.5 rounded-l-full bg-[#2f3033]" />
+            <div className="absolute -left-[15px] top-52 h-12 w-1.5 rounded-l-full bg-[#2f3033]" />
+            <div className="absolute -right-[15px] top-40 h-20 w-1.5 rounded-r-full bg-[#2f3033]" />
+
+            <div className="relative h-full w-full overflow-hidden rounded-[44px] border border-white/10 bg-gradient-to-b from-[#171717] via-[#0f0f10] to-black">
+              <div className="absolute left-1/2 top-3 z-20 h-8 w-28 -translate-x-1/2 rounded-full bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]" />
+
+
+             
             </div>
           </motion.div>
         </motion.div>

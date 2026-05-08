@@ -54,7 +54,7 @@ const stagger = {
   },
 };
 
-function StepCard({ step }) {
+function StepCard({ step }: { step: typeof steps[number] }) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -149,7 +149,7 @@ function StepCard({ step }) {
 
 export default function Employers() {
   return (
-    <section className="relative min-h-screen px-4 sm:px-6 pt-16 sm:pt-20 pb-20 sm:pb-24 bg-background overflow-hidden">
+    <section id="employers" className="relative min-h-screen scroll-mt-20 px-4 sm:px-6 pt-16 sm:pt-20 pb-20 sm:pb-24 bg-background overflow-hidden">
       <motion.div
         initial={{ opacity: 0, scale: 0.7 }}
         whileInView={{ opacity: 1, scale: 1 }}
