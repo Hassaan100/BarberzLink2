@@ -85,7 +85,7 @@ export default function HeroSection() {
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.6, duration: 0.6 }}
-  className="flex items-center gap-3 mb-4"
+  className="flex items-center gap-3 mb-4 "
 >
   
   {/* APP STORE */}
@@ -99,7 +99,7 @@ export default function HeroSection() {
       whileTap={{ scale: 0.95 }}
       className="flex cursor-pointer items-center gap-2 rounded-xl bg-background px-4 py-2.5 text-foreground transition-colors hover:bg-background"
     >
-      <SiAppstore size={22} />
+      <img src="http://localhost:3000/images/home/apple.png" alt="" width={100} height={100} className="w-8" />
 
       <div className="leading-tight">
         <p className="text-[9px] opacity-60">
@@ -125,7 +125,7 @@ export default function HeroSection() {
       whileTap={{ scale: 0.95 }}
       className="flex cursor-pointer items-center gap-2 rounded-xl bg-background px-4 py-2.5 text-foreground transition-colors hover:bg-background"
     >
-      <SiGoogleplay size={20} />
+      <img src="http://localhost:3000/images/home/playstore.png" alt="" width={100} height={100} className="w-8" />
 
       <div className="leading-tight">
         <p className="text-[9px] opacity-60">

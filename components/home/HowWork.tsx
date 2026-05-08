@@ -17,29 +17,29 @@ import { IoMdVideocam } from "react-icons/io";
 const barberSteps = [
   {
     num: "01",
-    title: "Post the Job",
-    desc: "Create your job in the Vetano app and pick the skills you want candidates to show on video.",
+    title: "Post Barber Jobs",
+    desc: "Share your barber job listings across social media, websites, flyers, and business platforms to hire skilled barbers faster.",
     icon: <PiSuitcaseSimpleBold />,
   },
 
   {
     num: "02",
-    title: "Share Your Link",
-    desc: "Drop your Vetano job link or QR anywhere you already post — Indeed, Craigslist, Facebook, your website, flyers, social.",
+    title: "Hire Skilled Barbers",
+    desc: "Connect with experienced and talented barbers ready to grow your shop, support clients, and strengthen your business.",
     icon: <IoShareSocialSharp />,
   },
 
   {
     num: "03",
-    title: "Review Proof",
-    desc: "Watch intro videos and proof-of-skill videos from ID-verified applicants. Real people, real skills — before the interview.",
+    title: "Fastest Growing Network",
+    desc: "Join a rapidly growing barber community designed to connect shops, professionals, and new business opportunities.",
     icon: <FaPlayCircle />,
   },
 
   {
     num: "04",
-    title: "Hire with Proof",
-    desc: "Choose with confidence. Real skills. Real proof. No more resume guesswork.",
+    title: "Business Growth",
+    desc: "Expand your barber business, attract more customers, and build long-term success through trusted barber connections.",
     icon: <IoShieldCheckmark />,
   },
 ];
@@ -48,29 +48,29 @@ const barberSteps = [
 const barberShopSteps = [
   {
     num: "01",
-    title: "Build Your Profile",
-    desc: "Create your Vetano profile, add your skills, and record a short intro video that showcases who you are.",
+    title: "Find Barber Jobs",
+    desc: "Explore barber job opportunities shared by trusted shops and businesses looking for skilled professionals near you.",
     icon: <IoMdVideocam />,
   },
 
   {
     num: "02",
-    title: "Record Skill Videos",
-    desc: "Film short videos proving your skills. Show employers exactly what you can do — before they even call you.",
+    title: "Become a Licensed Barber",
+    desc: "Start your barber journey, gain valuable experience, and grow your professional skills with real opportunities.",
     icon: <IoMdVideocam />,
   },
 
   {
     num: "03",
-    title: "Apply to Jobs",
-    desc: "Browse jobs that match your skills and apply instantly — your video profile does the talking for you.",
+    title: "Grow Your Talent and Skills",
+    desc: "Improve your barber expertise, build confidence, and connect with professionals who help grow your career faster.",
     icon: <MdOutlineSearch />,
   },
 
   {
     num: "04",
     title: "Get Hired Faster",
-    desc: "Stand out from the crowd. Employers see your real skills first — get interviews faster and land the job you deserve.",
+    desc: "Promote your barber profile across multiple platforms to connect with shops and secure opportunities more quickly.",
     icon: <IoCheckmarkCircleOutline />,
   },
 ];
@@ -187,7 +187,7 @@ function StepCard({ step, index }) {
             viewport={{
               once: true,
             }}
-            className="text-[20px] font-bold text-foreground mb-1.5"
+            className="text-[20px] font-bold text-foreground mb-1.5 text-start"
           >
             {step.title}
           </motion.div>
