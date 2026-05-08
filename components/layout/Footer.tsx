@@ -26,17 +26,17 @@ const platformLinks = [
 ];
 
 const companyLinks = [
-  { label: "About Us", href: "#" },
-  { label: "Contact", href: "#" },
-  { label: "Careers", href: "#" },
-  { label: "Press", href: "#" },
-  { label: "Support", href: "#" },
+  { label: "About Us", href: "/about" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "FAQ", href: "/faq" },
+
 ];
 
 const legalLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Cookie Policy", href: "#" },
-  { label: "Terms & Conditions", href: "#" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Support", href: "/support" },
 ];
 
 const Footer = () => {

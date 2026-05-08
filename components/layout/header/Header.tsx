@@ -10,6 +10,7 @@ import { StoreBadges } from "./StoreBadges";
 import ThemeToggle from "@/components/ThemeToggle";
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/use-mobile";
+import Link from "next/link";
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -41,13 +42,13 @@ export default function Header() {
 
           {/* Centre: desktop nav (hidden on mobile) */}
           
-<img
+<Link href="/"> <img
               src="/logo.png"
               width={100}
               height={100}
               className="w-16 cursor-pointer"
               alt="barberzlink logo"
-            />
+            /> </Link>
           {/* Right: theme toggle + socials + store badges */}
           <div className="flex items-center gap-3">
             {/* Theme toggle – uses next-themes + shadcn DropdownMenu */}

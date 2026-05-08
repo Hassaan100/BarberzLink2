@@ -205,7 +205,7 @@ export default function BarberzLinkSection() {
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   return (
-    <section className="bg-background text-white py-20 px-5 overflow-hidden">
+    <section id="services" className="scroll-mt-20 bg-background text-white py-20 px-5 overflow-hidden">
       <div className="max-w-7xl mx-auto">
        
         <motion.div

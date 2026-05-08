@@ -6,7 +6,7 @@ import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import ScrollToTop from "@/components/ScrollToTop";
-import Image from "next/image";
+import SiteMotion from "@/components/SiteMotion";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -63,7 +63,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${montserrat.variable} font-sans antialiased flex flex-col min-h-screen w-screen overflow-x-hidden`}
       >
@@ -77,7 +77,9 @@ export default function RootLayout({
 
           <Header />
 
-          <main className="grow">{children}</main>
+          <main className="grow">
+            <SiteMotion>{children}</SiteMotion>
+          </main>
 
           <Footer />
         </ThemeProvider>
