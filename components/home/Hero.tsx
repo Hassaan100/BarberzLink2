@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import { SiAppstore, SiGoogleplay } from "react-icons/si";
 import { FiPlay, FiShield, FiVideo, FiAward } from "react-icons/fi";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -80,54 +81,64 @@ export default function HeroSection() {
 
           
           {/* APP BUTTONS */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex items-center gap-3 mb-4"
-          >
-            
-            {/* APP STORE */}
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="#"
-              className="flex items-center gap-2 bg-background text-foreground rounded-xl px-4 py-2.5 hover:bg-background transition-colors"
-            >
-              <SiAppstore size={22} />
+         <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6, duration: 0.6 }}
+  className="flex items-center gap-3 mb-4"
+>
+  
+  {/* APP STORE */}
+  <Link
+    href="https://www.apple.com/app-store/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="flex cursor-pointer items-center gap-2 rounded-xl bg-background px-4 py-2.5 text-foreground transition-colors hover:bg-background"
+    >
+      <SiAppstore size={22} />
 
-              <div className="leading-tight">
-                <p className="text-[9px] opacity-60">
-                  Download on the
-                </p>
+      <div className="leading-tight">
+        <p className="text-[9px] opacity-60">
+          Download on the
+        </p>
 
-                <p className="text-[13px] font-bold">
-                  App Store
-                </p>
-              </div>
-            </motion.a>
+        <p className="text-[13px] font-bold">
+          App Store
+        </p>
+      </div>
+    </motion.div>
+  </Link>
 
-            
-            {/* GOOGLE PLAY */}
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="#"
-              className="flex items-center gap-2 bg-background text-foreground rounded-xl px-4 py-2.5 hover:bg-background transition-colors"
-            >
-              <SiGoogleplay size={20} />
+  
+  {/* GOOGLE PLAY */}
+  <Link
+    href="https://play.google.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="flex cursor-pointer items-center gap-2 rounded-xl bg-background px-4 py-2.5 text-foreground transition-colors hover:bg-background"
+    >
+      <SiGoogleplay size={20} />
 
-              <div className="leading-tight">
-                <p className="text-[9px] opacity-60">
-                  GET IT ON
-                </p>
+      <div className="leading-tight">
+        <p className="text-[9px] opacity-60">
+          GET IT ON
+        </p>
 
-                <p className="text-[13px] font-bold">
-                  Google Play
-                </p>
-              </div>
-            </motion.a>
-          </motion.div>
+        <p className="text-[13px] font-bold">
+          Google Play
+        </p>
+      </div>
+    </motion.div>
+  </Link>
+</motion.div>
 
           
           {/* SMALL TEXT */}
