@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 
 export default function Action() {
- 
   const fadeUp = {
     hidden: {
       opacity: 0,
@@ -17,7 +16,10 @@ export default function Action() {
   };
 
   return (
-    <section id="see-it-in-action" className="min-h-screen scroll-mt-20 bg-background flex items-center justify-center px-6 overflow-hidden">
+    <section
+      id="see-it-in-action"
+      className="min-h-screen scroll-mt-20 bg-background flex items-center justify-center px-6 overflow-hidden"
+    >
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -30,8 +32,6 @@ export default function Action() {
         }}
         className="max-w-3xl w-full py-20 flex flex-col items-center text-center"
       >
-        
-    
         <motion.div
           variants={fadeUp}
           transition={{
@@ -50,11 +50,9 @@ export default function Action() {
             }}
             className="w-2 h-2 rounded-full bg-[#e8a020] shrink-0"
           />
-
           See it in action
         </motion.div>
 
-        
         <motion.h2
           variants={fadeUp}
           transition={{
@@ -65,14 +63,9 @@ export default function Action() {
         >
           See how BarberzLink works in
           <br />
-
-          <span className="text-[#f5a623]">
-            56 seconds
-          </span>
+          <span className="text-[#f5a623]">56 seconds</span>
         </motion.h2>
 
-        
-       
         <motion.div
           variants={fadeUp}
           transition={{
@@ -82,21 +75,10 @@ export default function Action() {
           whileHover={{
             scale: 1.03,
           }}
-          className="inline-flex items-center gap-2 border border-[#3a3a3a] rounded-full px-4 py-[6px] text-xs text-[#aaa] mb-4 bg-white/[0.03]"
+          className="inline-flex items-center gap-2 border border-[#3a3a3a] rounded-full px-4 py-1.5 text-xs text-[#aaa] mb-4 bg-white/3"
         >
-          <svg
-            width="13"
-            height="13"
-            viewBox="0 0 13 13"
-            fill="none"
-          >
-            <circle
-              cx="6.5"
-              cy="6.5"
-              r="5.5"
-              stroke="#888"
-              strokeWidth="1.2"
-            />
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <circle cx="6.5" cy="6.5" r="5.5" stroke="#888" strokeWidth="1.2" />
 
             <path
               d="M6.5 3.5v3l2 1.5"
@@ -105,11 +87,9 @@ export default function Action() {
               strokeLinecap="round"
             />
           </svg>
-
           56-second video
         </motion.div>
 
-       
         <motion.p
           variants={fadeUp}
           transition={{
@@ -118,12 +98,10 @@ export default function Action() {
           }}
           className="text-[#888] text-[15px] leading-relaxed max-w-lg mb-9"
         >
-          This 56-second video is a quick walkthrough
-          of the platform — it shows how the product
-          works, not how long hiring takes.
+          This 56-second video is a quick walkthrough of the platform — it shows
+          how the product works, not how long hiring takes.
         </motion.p>
 
-       
         <motion.div
           variants={fadeUp}
           transition={{

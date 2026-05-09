@@ -1,18 +1,31 @@
 "use client";
 
+import { ArrowRight, Headphones, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaCalendarCheck, FaRegCircleCheck, FaScissors } from "react-icons/fa6";
-import { MdBusinessCenter, MdOutlineSchool, MdStorefront } from "react-icons/md";
+import {
+  MdBusinessCenter,
+  MdOutlineSchool,
+  MdStorefront,
+} from "react-icons/md";
 import { RiAdvertisementLine, RiBankCardLine } from "react-icons/ri";
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "https://barberlinkbackend-production.up.railway.app";
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL ||
+  "https://barberlinkbackend-production.up.railway.app";
 
 type Plan = {
   _id: string;
   name: string;
   price: number;
-  role: "barber" | "barbershop" | "business_resource" | "event_organizer" | "barberschool" | "product_advertiser";
+  role:
+    | "barber"
+    | "barbershop"
+    | "business_resource"
+    | "event_organizer"
+    | "barberschool"
+    | "product_advertiser";
   cycle: string;
   description: string;
   features: string[];
@@ -51,7 +64,7 @@ function formatCycle(cycle: string) {
 
 function SkeletonCard() {
   return (
-    <article className="flex min-h-[540px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8">
+    <article className="flex min-h-135 flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8">
       <div className="flex items-start justify-between gap-4">
         <div>
           <div className="h-3 w-20 animate-pulse rounded bg-zinc-800" />
@@ -144,69 +157,72 @@ export default function PricingPage() {
             <p>{error}</p>
           </div>
         ) : (
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {loading
-              ? Array.from({ length: 6 }).map((_, i) => (
-                  <SkeletonCard key={i} />
-                ))
-              : plans.map((plan) => {
-                  const Icon = roleIcons[plan.role];
+          <div className="flex flex-col justify-center items-center gap-8">
+            <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {loading
+                ? Array.from({ length: 6 }).map((_, i) => (
+                    <SkeletonCard key={i} />
+                  ))
+                : plans.map((plan) => {
+                    const Icon = roleIcons[plan.role];
 
-                  return (
-                    <article
-                      key={plan._id}
-                      className="flex min-h-[540px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-white transition-colors hover:border-amber-400/60 sm:p-8"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
-                            {plan.role.replaceAll("_", " ")}
-                          </p>
-                          <h2 className="mt-3 text-2xl font-bold leading-snug">
-                            {plan.name}
-                          </h2>
-                        </div>
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-400/10 text-2xl text-amber-400">
-                          <Icon />
-                        </div>
-                      </div>
-
-                      <div className="mt-7 flex items-end gap-2">
-                        <span className="text-5xl font-bold tracking-tight text-amber-400 sm:text-6xl">
-                          ${formatPrice(plan.price)}
-                        </span>
-                        <span className="pb-2 text-base font-semibold text-gray-400">
-                          / {formatCycle(plan.cycle)}
-                        </span>
-                      </div>
-
-                      <p className="mt-6 min-h-14 text-base leading-relaxed text-gray-400">
-                        {plan.description}
-                      </p>
-
-                      <div className="my-7 h-px bg-zinc-800" />
-
-                      <ul className="space-y-4">
-                        {plan.features.map((feature) => (
-                          <li
-                            key={feature}
-                            className="flex gap-3 text-sm leading-relaxed text-gray-200 sm:text-base"
-                          >
-                            <FaRegCircleCheck className="mt-0.5 shrink-0 text-amber-400" />
-                            <span>{cleanFeature(feature)}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <Link
-                        href="/support"
-                        className="mt-auto inline-flex min-h-11 items-center justify-center rounded-lg border border-amber-400/40 bg-amber-400/10 px-5 text-sm font-bold text-amber-300 transition-colors hover:border-amber-400 hover:bg-amber-400 hover:text-black"
+                    return (
+                      <article
+                        key={plan._id}
+                        className="flex min-h-135 flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-white transition-colors hover:border-amber-400/60 sm:p-8"
                       >
-                        Get Started
-                      </Link>
-                    </article>
-                  );
-                })}
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
+                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
+                              {plan.role.replaceAll("_", " ")}
+                            </p>
+                            <h2 className="mt-3 text-2xl font-bold leading-snug">
+                              {plan.name}
+                            </h2>
+                          </div>
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-400/10 text-2xl text-amber-400">
+                            <Icon />
+                          </div>
+                        </div>
+
+                        <div className="mt-7 flex items-end gap-2">
+                          <span className="text-5xl font-bold tracking-tight text-amber-400 sm:text-6xl">
+                            ${formatPrice(plan.price)}
+                          </span>
+                          <span className="pb-2 text-base font-semibold text-gray-400">
+                            / {formatCycle(plan.cycle)}
+                          </span>
+                        </div>
+
+                        <p className="mt-6 min-h-14 text-base leading-relaxed text-gray-400">
+                          {plan.description}
+                        </p>
+
+                        <div className="my-7 h-px bg-zinc-800" />
+
+                        <ul className="space-y-4">
+                          {plan.features.map((feature) => (
+                            <li
+                              key={feature}
+                              className="flex gap-3 text-sm leading-relaxed text-gray-200 sm:text-base"
+                            >
+                              <FaRegCircleCheck className="mt-0.5 shrink-0 text-amber-400" />
+                              <span>{cleanFeature(feature)}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </article>
+                    );
+                  })}
+            </div>
+            <Link
+              href="/contact"
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-amber-400 text-black font-medium  transition"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Contact Us
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         )}
       </div>

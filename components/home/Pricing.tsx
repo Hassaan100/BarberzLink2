@@ -6,7 +6,9 @@ import { FaArrowRight, FaRegCircleCheck, FaScissors } from "react-icons/fa6";
 import { MdStorefront } from "react-icons/md";
 import { RiBankCardLine } from "react-icons/ri";
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "https://barberlinkbackend-production.up.railway.app";
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL ||
+  "https://barberlinkbackend-production.up.railway.app";
 
 type Plan = {
   _id: string;
@@ -44,7 +46,7 @@ function cleanFeature(feature: string) {
 
 function SkeletonCard() {
   return (
-    <article className="flex min-h-[460px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-7">
+    <article className="flex min-h-115 flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-7">
       <div className="flex items-start justify-between gap-4">
         <div>
           <div className="h-3 w-20 animate-pulse rounded bg-zinc-800" />
@@ -120,7 +122,8 @@ export default function PricingPreview() {
             Pricing
           </div>
           <h2 className="text-4xl font-bold leading-tight md:text-6xl">
-           <span className="text-amber-400"> Pro packages  </span>built for barber industry growth
+            <span className="text-amber-400"> Pro packages </span>built for
+            barber industry growth
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Start with the plan that matches your role, then unlock the full
@@ -144,7 +147,7 @@ export default function PricingPreview() {
                   return (
                     <article
                       key={plan._id}
-                      className="flex min-h-[460px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-white transition-colors hover:border-amber-400/60 sm:p-7"
+                      className="flex min-h-115 flex-col rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-white transition-colors hover:border-amber-400/60 sm:p-7"
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div>
