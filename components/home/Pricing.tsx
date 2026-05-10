@@ -6,7 +6,9 @@ import { FaArrowRight, FaRegCircleCheck, FaScissors } from "react-icons/fa6";
 import { MdStorefront } from "react-icons/md";
 import { RiBankCardLine } from "react-icons/ri";
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "https://barberlinkbackend-production.up.railway.app";
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL ||
+  "https://barberlinkbackend-production.up.railway.app";
 
 type Plan = {
   _id: string;
@@ -120,7 +122,8 @@ export default function PricingPreview() {
             Pricing
           </div>
           <h2 className="text-4xl font-bold leading-tight md:text-6xl">
-           <span className="text-amber-400"> Pro packages  </span>built for barber industry growth
+            <span className="text-amber-400"> Pro packages </span>built for
+            barber industry growth
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Start with the plan that matches your role, then unlock the full

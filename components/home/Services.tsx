@@ -11,6 +11,11 @@ import {
   FaMobileAlt,
   FaChartLine,
   FaArrowRight,
+  FaUserPlus,
+  FaGraduationCap,
+  FaCalendarAlt,
+  FaBullhorn,
+  FaBriefcase,
 } from "react-icons/fa";
 
 // FRAMER MOTION
@@ -18,190 +23,193 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function BarberzLinkSection() {
   // ALL CONTENT DATA
-  const sections = [
-    {
-      id: 1,
+ const sections = [
+  {
+    id: 1,
 
-      title: "Online Barber Booking",
-      subtitle: "Let clients book anytime",
+    title: "Barber Shop Registration",
+    subtitle: "Build your professional barber profile",
 
-      icon: <FaCalendarCheck />,
+    icon: <FaUserPlus />,
 
-      image:
-        "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=1400&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=1400&auto=format&fit=crop",
 
-      stat1: "24/7",
-      stat1Text: "Online Booking",
+    stat1: "500+",
+    stat1Text: "Registered Barbers",
 
-      stat2: "40%",
-      stat2Text: "Less No-Shows",
+    stat2: "24/7",
+    stat2Text: "Skill Showcase",
 
-      description:
-        "Allow customers to book barber appointments online anytime without phone calls or waiting.",
+    description:
+      "Register as a barber, showcase your skills, connect with the barber community, and explore professional accessories.",
 
-      tags: [
-        "Haircuts",
-        "Beard Trim",
-        "Skin Fade",
-        "Hot Towel",
-        "Kids Cut",
-      ],
+    tags: [
+      "Barber Registration",
+      "Skill Showcase",
+      "Accessories",
+      "Referrals",
+      "Community",
+    ],
 
-      buttonText: "Start Booking Now",
-    },
+    buttonText: "Get Started",
+  },
 
-    {
-      id: 2,
+  {
+    id: 2,
 
-      title: "Barber Team Management",
-      subtitle: "Manage your entire shop easily",
+    title: "Professional Barber School",
+    subtitle: "Learn and grow your barber career",
 
-      icon: <FaUsers />,
+    icon: <FaGraduationCap />,
 
-      image:
-        "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?q=80&w=1400&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?q=80&w=1400&auto=format&fit=crop",
 
-      stat1: "100%",
-      stat1Text: "Team Visibility",
+    stat1: "100+",
+    stat1Text: "Training Programs",
 
-      stat2: "60%",
-      stat2Text: "Better Scheduling",
+    stat2: "95%",
+    stat2Text: "Student Success",
 
-      description:
-        "Manage barber schedules, appointments, staff availability, and daily workflow from one dashboard.",
+    description:
+      "Apply for barber training, improve your professional skills, and learn about modern barber accessories and tools.",
 
-      tags: [
-        "Barber Schedule",
-        "Staff Access",
-        "Appointments",
-        "Availability",
-      ],
+    tags: [
+      "Student Registration",
+      "Training",
+      "Skill Learning",
+      "Accessories",
+      "Career Growth",
+    ],
 
-      buttonText: "Manage Your Team",
-    },
+    buttonText: "Get Started",
+  },
 
-    {
-      id: 3,
+  {
+    id: 3,
 
-      title: "Grow Your Barber Brand",
-      subtitle: "Build your barber business online",
+    title: "Barber Events & Networking",
+    subtitle: "Connect with the barber industry",
 
-      icon: <FaChartLine />,
+    icon: <FaCalendarAlt />,
 
-      image:
-        "https://images.unsplash.com/photo-1503951458645-643d53bfd90f?q=80&w=1400&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1503951458645-643d53bfd90f?q=80&w=1400&auto=format&fit=crop",
 
-      stat1: "3X",
-      stat1Text: "More Visibility",
+    stat1: "50+",
+    stat1Text: "Industry Events",
 
-      stat2: "50%",
-      stat2Text: "More Returning Clients",
+    stat2: "1K+",
+    stat2Text: "Community Members",
 
-      description:
-        "Promote your barber shop online, attract new clients, and increase repeat bookings.",
+    description:
+      "Explore barber events, workshops, competitions, and networking opportunities with professionals.",
 
-      tags: [
-        "Marketing",
-        "Client Growth",
-        "Reviews",
-        "Brand Building",
-      ],
+    tags: [
+      "Workshops",
+      "Competitions",
+      "Networking",
+      "Meetups",
+      "Live Events",
+    ],
 
-      buttonText: "Grow Your Shop",
-    },
+    buttonText: "Get Started",
+  },
 
-    {
-      id: 4,
+  {
+    id: 4,
 
-      title: "Mobile Barber Experience",
-      subtitle: "Run your business from your phone",
+    title: "Products Advertiser",
+    subtitle: "Promote barber products professionally",
 
-      icon: <FaMobileAlt />,
+    icon: <FaBullhorn />,
 
-      image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop",
 
-      stat1: "Anytime",
-      stat1Text: "Mobile Access",
+    stat1: "200+",
+    stat1Text: "Featured Products",
 
-      stat2: "24/7",
-      stat2Text: "Booking Updates",
+    stat2: "80%",
+    stat2Text: "Brand Reach",
 
-      description:
-        "Check appointments, manage bookings, and stay connected with clients directly from mobile.",
+    description:
+      "Advertise barber products, grooming tools, and accessories to barber shops and professionals.",
 
-      tags: [
-        "Mobile Booking",
-        "Notifications",
-        "Calendar",
-        "Easy Access",
-      ],
+    tags: [
+      "Product Listings",
+      "Brand Promotion",
+      "Accessories",
+      "Marketing",
+      "Advertising",
+    ],
 
-      buttonText: "Use Mobile Features",
-    },
+    buttonText: "Get Started",
+  },
 
-    {
-      id: 5,
+  {
+    id: 5,
 
-      title: "Modern Barber Shop",
-      subtitle: "Create a professional experience",
+    title: "Business Resources",
+    subtitle: "Tools and support for barber businesses",
 
-      icon: <FaStore />,
+    icon: <FaBriefcase />,
 
-      image:
-        "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1400&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1400&auto=format&fit=crop",
 
-      stat1: "90%",
-      stat1Text: "Better Experience",
+    stat1: "100+",
+    stat1Text: "Business Guides",
 
-      stat2: "2X",
-      stat2Text: "Faster Service",
+    stat2: "24/7",
+    stat2Text: "Resource Access",
 
-      description:
-        "Give customers a smooth modern experience with online booking, reminders, and organized scheduling.",
+    description:
+      "Access company information, barber service guidance, licensing details, and ideal client strategies.",
 
-      tags: [
-        "Client Experience",
-        "Modern Shop",
-        "Digital Booking",
-        "Automation",
-      ],
+    tags: [
+      "Company Info",
+      "Barber Services",
+      "Ideal Clients",
+      "Licensing",
+      "Business Support",
+    ],
 
-      buttonText: "Upgrade Your Shop",
-    },
+    buttonText: "Get Started",
+  },
 
-    {
-      id: 6,
+  {
+    id: 6,
 
-      title: "Professional Barber Network",
-      subtitle: "Connect with the barber community",
+    title: "Professional Barber Community",
+    subtitle: "Grow with the barber network",
 
-      icon: <FaCut />,
+    icon: <FaCut />,
 
-      image:
-        "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1400&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1400&auto=format&fit=crop",
 
-      stat1: "Nationwide",
-      stat1Text: "Barber Network",
+    stat1: "Nationwide",
+    stat1Text: "Barber Network",
 
-      stat2: "Unlimited",
-      stat2Text: "Opportunities",
+    stat2: "Unlimited",
+    stat2Text: "Growth Opportunities",
 
-      description:
-        "Connect with barbers, discover opportunities, and grow your career in the barber industry.",
+    description:
+      "Connect with barbers, share knowledge, refer professionals, and grow your career opportunities.",
 
-      tags: [
-        "Community",
-        "Networking",
-        "Career Growth",
-        "Barber Events",
-      ],
+    tags: [
+      "Community",
+      "Networking",
+      "Referrals",
+      "Career Growth",
+      "Barber Industry",
+    ],
 
-      buttonText: "Join BarberzLink",
-    },
-  ];
-
-
+    buttonText: "Get Started",
+  },
+];
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   return (

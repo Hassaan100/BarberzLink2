@@ -1,4 +1,4 @@
-// @ts-nocheck 
+// @ts-nocheck
 
 "use client";
 
@@ -14,63 +14,63 @@ import { MdOutlineSearch } from "react-icons/md";
 import { IoMdVideocam } from "react-icons/io";
 
 // BARBER STEPS
-const barberSteps = [
+const barberShopSteps = [
   {
     num: "01",
-    title: "Post the Job",
-    desc: "Create your job in the Vetano app and pick the skills you want candidates to show on video.",
+    title: "Post Jobs",
+    desc: "Share your barber job listings across social media, websites, flyers, and business platforms to hire skilled barbers faster.",
     icon: <PiSuitcaseSimpleBold />,
   },
 
   {
     num: "02",
-    title: "Share Your Link",
-    desc: "Drop your Vetano job link or QR anywhere you already post — Indeed, Craigslist, Facebook, your website, flyers, social.",
+    title: "Hire Skilled Barbers",
+    desc: "Connect with experienced and talented barbers ready to grow your shop, support clients, and strengthen your business.",
     icon: <IoShareSocialSharp />,
   },
 
   {
     num: "03",
-    title: "Review Proof",
-    desc: "Watch intro videos and proof-of-skill videos from ID-verified applicants. Real people, real skills — before the interview.",
+    title: "Fastest Growing Network",
+    desc: "Join a rapidly growing barber community designed to connect shops, professionals, and new business opportunities.",
     icon: <FaPlayCircle />,
   },
 
   {
     num: "04",
-    title: "Hire with Proof",
-    desc: "Choose with confidence. Real skills. Real proof. No more resume guesswork.",
+    title: "Business Growth",
+    desc: "Expand your barber business, attract more customers, and build long-term success through trusted barber connections.",
     icon: <IoShieldCheckmark />,
   },
 ];
 
 // BARBER SHOP STEPS
-const barberShopSteps = [
+const barberSteps = [
   {
     num: "01",
-    title: "Build Your Profile",
-    desc: "Create your Vetano profile, add your skills, and record a short intro video that showcases who you are.",
+    title: "Find Jobs",
+    desc: "Explore barber job opportunities shared by trusted shops and businesses looking for skilled professionals near you.",
     icon: <IoMdVideocam />,
   },
 
   {
     num: "02",
-    title: "Record Skill Videos",
-    desc: "Film short videos proving your skills. Show employers exactly what you can do — before they even call you.",
+    title: "Become a Licensed Barber",
+    desc: "Start your barber journey, gain valuable experience, and grow your professional skills with real opportunities.",
     icon: <IoMdVideocam />,
   },
 
   {
     num: "03",
-    title: "Apply to Jobs",
-    desc: "Browse jobs that match your skills and apply instantly — your video profile does the talking for you.",
+    title: "Grow Your Talent and Skills",
+    desc: "Improve your barber expertise, build confidence, and connect with professionals who help grow your career faster.",
     icon: <MdOutlineSearch />,
   },
 
   {
     num: "04",
     title: "Get Hired Faster",
-    desc: "Stand out from the crowd. Employers see your real skills first — get interviews faster and land the job you deserve.",
+    desc: "Promote your barber profile across multiple platforms to connect with shops and secure opportunities more quickly.",
     icon: <IoCheckmarkCircleOutline />,
   },
 ];
@@ -109,11 +109,8 @@ function StepCard({ step, index }) {
       }}
       className="bg-background border border-[#222] rounded-2xl flex flex-col transition-all duration-300 p-3 z-5 "
     >
-      
-      
-          {/* IMAGE */}
+      {/* IMAGE */}
       <div className="relative  rounded-2xl">
-        
         <motion.img
           whileHover={{
             scale: 1.05,
@@ -126,7 +123,6 @@ function StepCard({ step, index }) {
           className="rounded-2xl w-full"
         />
 
-        
         {/* NUMBER */}
         <motion.div
           initial={{
@@ -151,13 +147,9 @@ function StepCard({ step, index }) {
         </motion.div>
       </div>
 
-      
-          {/* CONTENT */}
+      {/* CONTENT */}
       <div className="p-4 flex flex-col flex-1 gap-3">
-        
         <div className="flex justify-start items-center gap-5">
-          
-          
           {/* ICON */}
           <motion.div
             whileHover={{
@@ -169,7 +161,6 @@ function StepCard({ step, index }) {
             {step.icon}
           </motion.div>
 
-          
           {/* TITLE */}
           <motion.div
             initial={{
@@ -187,13 +178,12 @@ function StepCard({ step, index }) {
             viewport={{
               once: true,
             }}
-            className="text-[20px] font-bold text-foreground mb-1.5"
+            className="text-[20px] font-bold text-foreground mb-1.5 text-start"
           >
             {step.title}
           </motion.div>
         </div>
 
-        
         {/* DESCRIPTION */}
         <motion.div
           initial={{
@@ -224,13 +214,13 @@ function StepCard({ step, index }) {
 export default function HowWorks() {
   const [tab, setTab] = useState("barber");
 
-  const steps =
-    tab === "barber"
-      ? barberSteps
-      : barberShopSteps;
+  const steps = tab === "barber" ? barberSteps : barberShopSteps;
 
   return (
-    <section id="how-it-works" className="min-h-screen scroll-mt-20 bg-background flex items-center justify-center px-5 py-16 overflow-hidden">
+    <section
+      id="how-it-works"
+      className="min-h-screen scroll-mt-20 bg-background flex items-center justify-center px-5 py-16 overflow-hidden"
+    >
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -243,9 +233,7 @@ export default function HowWorks() {
         }}
         className="max-w-7xl w-full flex flex-col items-center text-center"
       >
-        
-        
-            {/* TOP BADGE */}
+        {/* TOP BADGE */}
         <motion.div
           variants={fadeUp}
           transition={{
@@ -263,12 +251,10 @@ export default function HowWorks() {
             }}
             className="w-2 h-2 rounded-full bg-[#e8a020] shrink-0"
           />
-
           HOW IT WORKS
         </motion.div>
 
-        
-            {/* HEADING */}
+        {/* HEADING */}
         <motion.h2
           variants={fadeUp}
           transition={{
@@ -277,15 +263,10 @@ export default function HowWorks() {
           }}
           className="text-[clamp(36px,5.5vw,62px)] font-extrabold leading-[1.08] text-foreground mb-4"
         >
-          From Skills to{" "}
-
-          <span className="text-amber-400">
-            Success
-          </span>
+          From Skills to <span className="text-amber-400">Success</span>
         </motion.h2>
 
-        
-            {/* SUBTEXT */}
+        {/* SUBTEXT */}
         <motion.p
           variants={fadeUp}
           transition={{
@@ -294,13 +275,11 @@ export default function HowWorks() {
           }}
           className="text-[16px] text-[#777] mb-9 max-w-125 leading-relaxed"
         >
-          A simple process that puts real abilities
-          front and center.
+          A simple process that puts real abilities front and center.
         </motion.p>
 
-        
-            {/* TABS */}
-       
+        {/* TABS */}
+
         <motion.div
           variants={fadeUp}
           transition={{
@@ -324,15 +303,12 @@ export default function HowWorks() {
                   : "bg-transparent text-foreground hover:text-foreground hover:bg-white/6"
               }`}
             >
-              {t === "barber"
-                ? "Barberz"
-                : "Barberz Shop"}
+              {t === "barber" ? "Barberz" : "Barberz Shop"}
             </motion.button>
           ))}
         </motion.div>
 
-        
-            {/* CARDS */}
+        {/* CARDS */}
         <AnimatePresence mode="wait">
           <motion.div
             key={tab}
@@ -354,11 +330,7 @@ export default function HowWorks() {
             className="grid grid-cols-4 gap-4 w-full max-[800px]:grid-cols-2 max-[480px]:grid-cols-1 "
           >
             {steps.map((step, i) => (
-              <StepCard
-                key={i}
-                step={step}
-                index={i}
-              />
+              <StepCard key={i} step={step} index={i} />
             ))}
           </motion.div>
         </AnimatePresence>
