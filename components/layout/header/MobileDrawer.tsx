@@ -222,7 +222,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                         alt="Apple Store"
                         width={100}
                         height={100}
-                        className="w-6"
+                        className="w-6 h-6"
                       />
                     </motion.div>
                   </Link>
@@ -246,7 +246,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                         alt="Google Play"
                         width={100}
                         height={100}
-                        className="w-8"
+                        className="w-6 h-6"
                       />
                     </motion.div>
                   </Link>
@@ -358,7 +358,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                         alt="Apple Store"
                         width={100}
                         height={100}
-                        className="w-6"
+                        className="w-6 h-6"
                       />
                     </motion.div>
                   </Link>
@@ -385,7 +385,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                         alt="Google Play"
                         width={100}
                         height={100}
-                        className="w-8`"
+                        className="w-9 h-9`"
                       />
                     </motion.div>
                   </Link>

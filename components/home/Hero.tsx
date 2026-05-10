@@ -1,10 +1,12 @@
 "use client";
+// @ts-ignore
 
 import { motion } from "framer-motion";
 
 import { SiAppstore, SiGoogleplay } from "react-icons/si";
 import { FiPlay, FiShield, FiVideo, FiAward } from "react-icons/fi";
 import Link from "next/link";
+import { AppButton } from "../layout/AppButton";
 
 export default function HeroSection() {
   return (
@@ -20,7 +22,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex-1 max-w-xl"
+          className="flex-1 max-w-xl "
         >
           {/* TOP LABEL */}
           <motion.div
@@ -39,7 +41,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="text-5xl md:text-[53px] font-black leading-tight mb-6"
+            className="text-3xl md:text-[53px] font-black leading-tight mb-6"
           >
             <span className="text-foreground">Professional say it.</span>
 
@@ -53,7 +55,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="text-foreground text-xl leading-relaxed mb-8 max-w-lg"
+            className="text-md text-foreground md:text-xl leading-relaxed mb-8 max-w-lg"
           >
             The mobile app where you see ID-verified profiles, intro videos, and
             proof of skill before the interview. BarberzLink helps businesses
@@ -76,61 +78,18 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex items-center gap-3 mb-4 "
+            className="py-5 flex gap-4"
           >
-            {/* APP STORE */}
-            <Link
-              href="https://www.apple.com/app-store/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex cursor-pointer items-center gap-2 rounded-xl bg-black px-4 py-2.5 text-white transition-colors  hover:shadow-sm hover:shadow-[#b59648]"
-              >
-                <img
-                  src="http://localhost:3000/images/home/apple.png"
-                  alt=""
-                  width={100}
-                  height={100}
-                  className="w-6"
-                />
-
-                <div className="leading-tight">
-                  <p className="text-[9px] opacity-60">Download on the</p>
-
-                  <p className="text-[13px] font-bold">App Store</p>
-                </div>
-              </motion.div>
-            </Link>
-
-            {/* GOOGLE PLAY */}
-            <Link
-              href="https://play.google.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex cursor-pointer items-center gap-2 rounded-xl bg-black px-4 py-2.5 text-white transition-colors  hover:shadow-sm hover:shadow-[#b59648]"
-              >
-                <img
-                  src="http://localhost:3000/images/home/playstore.png"
-                  alt=""
-                  width={100}
-                  height={100}
-                  className="w-6"
-                />
-
-                <div className="leading-tight">
-                  <p className="text-[9px] opacity-60">GET IT ON</p>
-
-                  <p className="text-[13px] font-bold">Google Play</p>
-                </div>
-              </motion.div>
-            </Link>
+            <AppButton
+              icon="/images/home/apple.png"
+              title="Download on the"
+              desc="App Store"
+            />
+            <AppButton
+              icon="/images/home/playstore.png"
+              title="Download on the"
+              desc="Play Store"
+            />
           </motion.div>
 
           {/* SMALL TEXT */}

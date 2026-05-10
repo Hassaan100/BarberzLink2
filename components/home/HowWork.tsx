@@ -1,4 +1,4 @@
-// @ts-nocheck 
+// @ts-nocheck
 
 "use client";
 
@@ -14,10 +14,10 @@ import { MdOutlineSearch } from "react-icons/md";
 import { IoMdVideocam } from "react-icons/io";
 
 // BARBER STEPS
-const barberSteps = [
+const barberShopSteps = [
   {
     num: "01",
-    title: "Post Barber Jobs",
+    title: "Post Jobs",
     desc: "Share your barber job listings across social media, websites, flyers, and business platforms to hire skilled barbers faster.",
     icon: <PiSuitcaseSimpleBold />,
   },
@@ -45,10 +45,10 @@ const barberSteps = [
 ];
 
 // BARBER SHOP STEPS
-const barberShopSteps = [
+const barberSteps = [
   {
     num: "01",
-    title: "Find Barber Jobs",
+    title: "Find Jobs",
     desc: "Explore barber job opportunities shared by trusted shops and businesses looking for skilled professionals near you.",
     icon: <IoMdVideocam />,
   },
@@ -109,11 +109,8 @@ function StepCard({ step, index }) {
       }}
       className="bg-background border border-[#222] rounded-2xl flex flex-col transition-all duration-300 p-3 z-5 "
     >
-      
-      
-          {/* IMAGE */}
+      {/* IMAGE */}
       <div className="relative  rounded-2xl">
-        
         <motion.img
           whileHover={{
             scale: 1.05,
@@ -126,7 +123,6 @@ function StepCard({ step, index }) {
           className="rounded-2xl w-full"
         />
 
-        
         {/* NUMBER */}
         <motion.div
           initial={{
@@ -151,13 +147,9 @@ function StepCard({ step, index }) {
         </motion.div>
       </div>
 
-      
-          {/* CONTENT */}
+      {/* CONTENT */}
       <div className="p-4 flex flex-col flex-1 gap-3">
-        
         <div className="flex justify-start items-center gap-5">
-          
-          
           {/* ICON */}
           <motion.div
             whileHover={{
@@ -169,7 +161,6 @@ function StepCard({ step, index }) {
             {step.icon}
           </motion.div>
 
-          
           {/* TITLE */}
           <motion.div
             initial={{
@@ -193,7 +184,6 @@ function StepCard({ step, index }) {
           </motion.div>
         </div>
 
-        
         {/* DESCRIPTION */}
         <motion.div
           initial={{
@@ -224,13 +214,13 @@ function StepCard({ step, index }) {
 export default function HowWorks() {
   const [tab, setTab] = useState("barber");
 
-  const steps =
-    tab === "barber"
-      ? barberSteps
-      : barberShopSteps;
+  const steps = tab === "barber" ? barberSteps : barberShopSteps;
 
   return (
-    <section id="how-it-works" className="min-h-screen scroll-mt-20 bg-background flex items-center justify-center px-5 py-16 overflow-hidden">
+    <section
+      id="how-it-works"
+      className="min-h-screen scroll-mt-20 bg-background flex items-center justify-center px-5 py-16 overflow-hidden"
+    >
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -243,9 +233,7 @@ export default function HowWorks() {
         }}
         className="max-w-7xl w-full flex flex-col items-center text-center"
       >
-        
-        
-            {/* TOP BADGE */}
+        {/* TOP BADGE */}
         <motion.div
           variants={fadeUp}
           transition={{
@@ -263,12 +251,10 @@ export default function HowWorks() {
             }}
             className="w-2 h-2 rounded-full bg-[#e8a020] shrink-0"
           />
-
           HOW IT WORKS
         </motion.div>
 
-        
-            {/* HEADING */}
+        {/* HEADING */}
         <motion.h2
           variants={fadeUp}
           transition={{
@@ -277,15 +263,10 @@ export default function HowWorks() {
           }}
           className="text-[clamp(36px,5.5vw,62px)] font-extrabold leading-[1.08] text-foreground mb-4"
         >
-          From Skills to{" "}
-
-          <span className="text-amber-400">
-            Success
-          </span>
+          From Skills to <span className="text-amber-400">Success</span>
         </motion.h2>
 
-        
-            {/* SUBTEXT */}
+        {/* SUBTEXT */}
         <motion.p
           variants={fadeUp}
           transition={{
@@ -294,13 +275,11 @@ export default function HowWorks() {
           }}
           className="text-[16px] text-[#777] mb-9 max-w-125 leading-relaxed"
         >
-          A simple process that puts real abilities
-          front and center.
+          A simple process that puts real abilities front and center.
         </motion.p>
 
-        
-            {/* TABS */}
-       
+        {/* TABS */}
+
         <motion.div
           variants={fadeUp}
           transition={{
@@ -324,15 +303,12 @@ export default function HowWorks() {
                   : "bg-transparent text-foreground hover:text-foreground hover:bg-white/6"
               }`}
             >
-              {t === "barber"
-                ? "Barberz"
-                : "Barberz Shop"}
+              {t === "barber" ? "Barberz" : "Barberz Shop"}
             </motion.button>
           ))}
         </motion.div>
 
-        
-            {/* CARDS */}
+        {/* CARDS */}
         <AnimatePresence mode="wait">
           <motion.div
             key={tab}
@@ -354,11 +330,7 @@ export default function HowWorks() {
             className="grid grid-cols-4 gap-4 w-full max-[800px]:grid-cols-2 max-[480px]:grid-cols-1 "
           >
             {steps.map((step, i) => (
-              <StepCard
-                key={i}
-                step={step}
-                index={i}
-              />
+              <StepCard key={i} step={step} index={i} />
             ))}
           </motion.div>
         </AnimatePresence>
